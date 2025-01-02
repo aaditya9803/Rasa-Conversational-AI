@@ -1,5 +1,6 @@
 version: "3.1"
 
+#categories of things a user can say
 intents:
   - greet
   - goodbye
@@ -9,9 +10,17 @@ intents:
   - mood_unhappy
   - bot_challenge
 
+#Replies that the bot can give
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey, {name}! How are you?"
+    # buttons:
+    #   - title:"great"
+    #     payload: '/mood_great'
+    #   - title:"sad"
+    #     payload: '/mood_unhappy'
+  - text: "Hi, {name}. Hsow can I help you?"
+
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -19,6 +28,9 @@ responses:
 
   utter_did_that_help:
   - text: "Did that help you?"
+
+  utter_default:
+  - text: "Sorry, I didn't get that. Could you rephrase it?"
 
   utter_happy:
   - text: "Great, carry on!"
@@ -29,6 +41,14 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+#Slot: (varibles that bot remembers during the conversation)
+
+
+#Entities: (variables that the bot can extract from the user input)
+
+#Forms and Actoions: (actions that the bot can take)
+
+#Rules for the bot to follow
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
