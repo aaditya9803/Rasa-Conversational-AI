@@ -89,3 +89,8 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: ask_age
+  examples: |
+    - my age is [18](age)
+    - I'm [19](age) years old
+    - I am [20](age) years old
