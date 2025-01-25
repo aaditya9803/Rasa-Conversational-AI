@@ -2,16 +2,33 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: guided flow
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: greet
+    - action: utter_greet
+    - intent: provide_age
+    - action: action_extract_age
+    - action: utter_ask_height
+    - intent: provide_height
+    - action: utter_ask_weight
+    - intent: provide_weight
+    - action: action_calculate_bmi
+    - action: utter_bmi_result
 
-#When Bot Says
-- story: questions
+- story: direct weight input
   steps:
-  #greet & utter_greet
-  - intent: ask_age
-  - action: utter_ask_age
+    - intent: provide_weight
+    - action: action_handle_direct_input
+    - action: utter_direct_input
+
+- story: direct height input
+  steps:
+    - intent: provide_height
+    - action: action_handle_direct_input
+    - action: utter_direct_input
+
+- story: direct age input
+  steps:
+    - intent: provide_age
+    - action: action_extract_age
+    - action: utter_ask_height

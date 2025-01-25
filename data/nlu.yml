@@ -19,78 +19,25 @@ nlu:
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
+    - c u 
     - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    
 
-- intent: affirm
+- intent: provide_age
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - my age is [25](age)
+    - I am [30](age) years old
+    - age: [20](age)
 
-- intent: deny
+- intent: provide_height
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - my height is [1.75](height) meters
+    - I am [1.80](height) meters tall
+    - height: [1.65](height)
 
-- intent: mood_great
+- intent: provide_weight
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-- intent: ask_age
-  examples: |
-    - my age is [18](age)
-    - I'm [19](age) years old
-    - I am [20](age) years old
+    - my weight is [70](weight) kg
+    - I weigh [60](weight) kg
+    - weight: [80](weight)
