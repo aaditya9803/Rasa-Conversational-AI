@@ -12,7 +12,7 @@ class ActionHandleConversation(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+
 
         age = tracker.get_slot('age')
         gender = tracker.get_slot('gender')
@@ -54,5 +54,6 @@ class ActionHandleConversation(Action):
             dispatcher.utter_message(response="utter_ask_smoking_status")
         else:
             dispatcher.utter_message(response="utter_thank_you")
+
 
         return []
