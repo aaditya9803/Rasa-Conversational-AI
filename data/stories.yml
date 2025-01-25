@@ -26,4 +26,8 @@ stories:
     - intent: provide_smoking_status
     - action: action_handle_conversation
     - action: utter_thank_you
-    
+
+- story: greet
+  steps:
+    - intent: greet
+    - action: utter_greet

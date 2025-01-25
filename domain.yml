@@ -12,6 +12,8 @@ intents:
   - provide_avg_glucose_level
   - provide_bmi
   - provide_smoking_status
+  - bot_challenge
+  - goodbye
 
 entities:
   - age
@@ -106,3 +108,8 @@ responses:
     - text: "Hey, I'm just a bot"
 actions:
   - action_handle_conversation
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

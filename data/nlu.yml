@@ -1,3 +1,6 @@
+version: "3.1"
+
+nlu:
 - intent: greet
   examples: |
     - hi
@@ -6,7 +9,7 @@
     - hii
     - hola
     - hallo
-    
+
 
 - intent: provide_age
   examples: |
@@ -64,3 +67,15 @@
     - I [never smoked](smoking_status)
     - I am a [former smoker](smoking_status)
     - I [smoke](smoking_status)
+
+- intent: bot_challenge
+  examples: |
+    - Who are you?
+    - What are you? 
+    - Tell me about you.
+
+- intent: goodbye
+  examples: |
+    - bye
+    - see you
+    - bye bye
