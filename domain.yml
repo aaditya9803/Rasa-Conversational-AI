@@ -3,49 +3,27 @@ version: "3.1"
 intents:
   - greet
   - provide_age
-  - provide_height
-  - provide_weight
-  - goodbye
-
-responses:
-  utter_greet:
-    - text: "Hi! Let's start with your age. How old are you?"
-
-  utter_ask_height:
-    - text: "Thanks! What is your height in meters?"
-
-  utter_ask_weight:
-    - text: "Got it! What is your weight in kilograms?"
-
-  utter_ask_bmi:
-    - text: "Do you want to calculate your BMI?"
-
-  utter_direct_input:
-    - text: "Do you want to start the questions?"
-
-  utter_bmi_result:
-    - text: "Your BMI is {bmi:.2f}. This is considered {bmi_category}."
-
-  utter_goodbye:
-    - text: "Good Bye"
-
-  utter_iamabot:
-    - text: "I'm Ne the Bot"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-
-
-actions:
-  - action_extract_age
-  - action_calculate_bmi
-  - action_handle_direct_input
+  - provide_gender
+  - provide_hypertension
+  - provide_heart_disease
+  - provide_ever_married
+  - provide_work_type
+  - provide_residence_type
+  - provide_avg_glucose_level
+  - provide_bmi
+  - provide_smoking_status
 
 entities:
   - age
-  - height
-  - weight
+  - gender
+  - hypertension
+  - heart_disease
+  - ever_married
+  - work_type
+  - Residence_type
+  - avg_glucose_level
+  - bmi
+  - smoking_status
 
 slots:
   age:
@@ -53,13 +31,78 @@ slots:
     mappings:
       - type: from_entity
         entity: age
-  height:
+  gender:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: gender
+  hypertension:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: hypertension
+  heart_disease:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: heart_disease
+  ever_married:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ever_married
+  work_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: work_type
+  Residence_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: Residence_type
+  avg_glucose_level:
     type: float
     mappings:
       - type: from_entity
-        entity: height
-  weight:
+        entity: avg_glucose_level
+  bmi:
     type: float
     mappings:
       - type: from_entity
-        entity: weight
+        entity: bmi
+  smoking_status:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: smoking_status
+
+responses:
+  utter_greet:
+    - text: "Hi! Let's start with your age. How old are you?"
+  utter_ask_gender:
+    - text: "What is your gender? (e.g., male, female, non-binary)"
+  utter_ask_hypertension:
+    - text: "Do you have hypertension? (yes/no)"
+  utter_ask_heart_disease:
+    - text: "Do you have any heart disease? (yes/no)"
+  utter_ask_ever_married:
+    - text: "Have you ever been married? (yes/no)"
+  utter_ask_work_type:
+    - text: "What is your work type? (e.g., private, self-employed, govt_job)"
+  utter_ask_residence_type:
+    - text: "What is your residence type? (e.g., urban, rural)"
+  utter_ask_avg_glucose_level:
+    - text: "What is your average glucose level?"
+  utter_ask_bmi:
+    - text: "What is your BMI?"
+  utter_ask_smoking_status:
+    - text: "What is your smoking status? (e.g., never smoked, formerly smoked, smokes)"
+  utter_thank_you:
+    - text: "Thank you for providing all the information!"
+  utter_goodbye:
+    - text: "Bye"
+  utter_iamabot:
+    - text: "Hey, I'm just a bot"
+actions:
+  - action_handle_conversation
