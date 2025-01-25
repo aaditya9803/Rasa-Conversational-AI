@@ -27,7 +27,7 @@ stories:
     - action: action_handle_conversation
     - action: utter_thank_you
 
-- story: greet
-  steps:
-    - intent: greet
-    - action: utter_greet
+# - story: greet
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
