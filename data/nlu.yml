@@ -3,26 +3,13 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hey
+    - what's up
+    - hii
+    - hola
+    - hallo
 
-- intent: goodbye
-  examples: |
-    - bye
-    - c u 
-    - goodbye
-    
 
 - intent: provide_age
   examples: |
@@ -30,14 +17,65 @@ nlu:
     - I am [30](age) years old
     - age: [20](age)
 
-- intent: provide_height
+- intent: provide_gender
   examples: |
-    - my height is [1.75](height) meters
-    - I am [1.80](height) meters tall
-    - height: [1.65](height)
+    - I am a [male](gender)
+    - my gender is [female](gender)
+    - gender: [non-binary](gender)
 
-- intent: provide_weight
+- intent: provide_hypertension
   examples: |
-    - my weight is [70](weight) kg
-    - I weigh [60](weight) kg
-    - weight: [80](weight)
+    - I have [hypertension](hypertension)
+    - [yes](hypertension), I have hypertension
+    - [no](hypertension), I don't have hypertension
+
+- intent: provide_heart_disease
+  examples: |
+    - I have [heart disease](heart_disease)
+    - [yes](heart_disease), I have heart disease
+    - [no](heart_disease), I don't have heart disease
+
+- intent: provide_ever_married
+  examples: |
+    - I am [married](ever_married)
+    - [yes](ever_married), I have been married
+    - [no](ever_married), I have never been married
+
+- intent: provide_work_type
+  examples: |
+    - I work in the [private](work_type) sector
+    - my work type is [self-employed](work_type)
+    - I have a [govt_job](work_type)
+
+- intent: provide_residence_type
+  examples: |
+    - I live in an [urban](Residence_type) area
+    - my residence type is [rural](Residence_type)
+
+- intent: provide_avg_glucose_level
+  examples: |
+    - my average glucose level is [95.5](avg_glucose_level)
+    - [100.2](avg_glucose_level) is my glucose level
+
+- intent: provide_bmi
+  examples: |
+    - my BMI is [22.5](bmi)
+    - [25.0](bmi) is my BMI
+
+- intent: provide_smoking_status
+  examples: |
+    - I [never smoked](smoking_status)
+    - I am a [former smoker](smoking_status)
+    - I [smoke](smoking_status)
+
+- intent: bot_challenge
+  examples: |
+    - Who are you?
+    - What are you? 
+    - Tell me about you.
+
+- intent: goodbye
+  examples: |
+    - bye
+    - see you
+    - bye bye

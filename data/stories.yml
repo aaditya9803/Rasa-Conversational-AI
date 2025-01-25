@@ -1,34 +1,33 @@
 version: "3.1"
 
 stories:
-
-- story: guided flow
+- story: collect_all_info
   steps:
     - intent: greet
     - action: utter_greet
     - intent: provide_age
-    - action: action_extract_age
-    - action: utter_ask_height
-    - intent: provide_height
-    - action: utter_ask_weight
-    - intent: provide_weight
-    - action: action_calculate_bmi
-    - action: utter_bmi_result
+    - action: action_handle_conversation
+    - intent: provide_gender
+    - action: action_handle_conversation
+    - intent: provide_hypertension
+    - action: action_handle_conversation
+    - intent: provide_heart_disease
+    - action: action_handle_conversation
+    - intent: provide_ever_married
+    - action: action_handle_conversation
+    - intent: provide_work_type
+    - action: action_handle_conversation
+    - intent: provide_residence_type
+    - action: action_handle_conversation
+    - intent: provide_avg_glucose_level
+    - action: action_handle_conversation
+    - intent: provide_bmi
+    - action: action_handle_conversation
+    - intent: provide_smoking_status
+    - action: action_handle_conversation
+    - action: utter_thank_you
 
-- story: direct weight input
-  steps:
-    - intent: provide_weight
-    - action: action_handle_direct_input
-    - action: utter_direct_input
-
-- story: direct height input
-  steps:
-    - intent: provide_height
-    - action: action_handle_direct_input
-    - action: utter_direct_input
-
-- story: direct age input
-  steps:
-    - intent: provide_age
-    - action: action_extract_age
-    - action: utter_ask_height
+# - story: greet
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
