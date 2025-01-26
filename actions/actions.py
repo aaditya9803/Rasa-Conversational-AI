@@ -2,7 +2,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
-
+from page.ml_function import ml_function
 
 # def verify_data(smoking_status, if_know_avg_glucose, avg_glucose_level, height, weight, residence_type, work_type, ever_married, heart_disease, hypertension, age, gender):
 
