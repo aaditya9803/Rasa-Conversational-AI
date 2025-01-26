@@ -22,6 +22,8 @@ stories:
     - action: action_handle_conversation
     - intent: provide_residence_type
     - action: action_handle_conversation
+    - intent: provide_if_know_avg_glucose
+    - action: action_handle_conversation
     - intent: provide_avg_glucose_level
     - action: action_handle_conversation
     - intent: provide_height

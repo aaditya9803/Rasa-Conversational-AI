@@ -33,7 +33,7 @@ Open the app in the browser with URL: `http://localhost:8501`
 
 # Data
 
-The Stroke Prediction Dataset was accessed from following sources:
+The Stroke Prediction Dataset was accessed from following source:
 
 https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
 

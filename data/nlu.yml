@@ -71,6 +71,11 @@ nlu:
 
 - intent: provide_hypertension
   examples: |
+    - [yes](hypertension)
+    - [no](hypertension)
+    - [yeah](hypertension)
+    - [nope](hypertension)
+    - [yep](hypertension)
     - I [have](hypertension)
     - I [don't have](hypertension)
     - [yes](hypertension), I [have](hypertension) hypertension
@@ -79,11 +84,7 @@ nlu:
     - [no](hypertension), I've never had hypertension
     - I [have](hypertension) high blood pressure, which is hypertension
     - I [don't have](hypertension) been diagnosed with hypertension
-    - [yes](hypertension)
-    - [no](hypertension)
-    - [yeah](hypertension)
-    - [nope](hypertension)
-    - [yep](hypertension)
+
 
 - intent: provide_heart_disease
   examples: |
@@ -124,18 +125,26 @@ nlu:
 
 - intent: provide_work_type
   examples: |
-    - I work in the [private](work_type) sector
-    - my work type is [self-employed](work_type)
-    - I have a [govt_job](work_type)
-    - I'm [self-employed](work_type)
-    - I work for the [government](work_type)
-    - I'm in the [private](work_type) sector
-    - I have a [govt_job](work_type)
-    - I'm a [freelancer](work_type)
-    - I work in a [private](work_type) company
-    - I'm [self-employed](work_type) as a consultant
-    - [private](work_type)
-    - It's a [govt_job](work_type)
+    - I work in the [Private](work_type) sector
+    - my work type is [Self Employed](work_type)
+    - I have a [Government job](work_type)
+    - I'm [Self Employed](work_type)
+    - I work for the [Government](work_type)
+    - I'm in the [Private](work_type) sector
+    - I have a [Government job](work_type)
+    - I work in a [Private](work_type) company
+    - I'm [Self Employed](work_type) as a consultant
+    - [Private](work_type)
+    - It's a [Government job](work_type)
+    - I [Have children](work_type) and don't work
+    - I [Never worked](work_type)
+    - My work type is [Have children](work_type)
+    - I [Never worked](work_type) in my life
+    - I'm a [Government job](work_type) employee
+    - I'm [Self Employed](work_type) and run my own business
+    - I work in the [Private](work_type) industry
+    - I [Have children](work_type) and am a stay-at-home parent
+    - I [Never worked](work_type) outside the home
 
 - intent: provide_residence_type
   examples: |
@@ -152,22 +161,58 @@ nlu:
     - [urban](Residence_type)
     - It's [rural](Residence_type)
 
+
+- intent: provide_if_know_avg_glucose
+  examples:  |
+    
+- intent: provide_if_know_avg_glucose
+  examples: |
+    - [yeah](if_know_avg_glucose)
+    - [nope](if_know_avg_glucose)
+    - [yep](if_know_avg_glucose)
+    - [no](if_know_avg_glucose)
+    - [yes](if_know_avg_glucose)
+    - I [know](if_know_avg_glucose)
+    - I [don't know](if_know_avg_glucose)
+    - I [have](if_know_avg_glucose)
+    - I [don't have](if_know_avg_glucose)
+    - [sure](if_know_avg_glucose)
+    - [not sure](if_know_avg_glucose)
+    - [Yes](if_know_avg_glucose), I know my average glucose level
+    - [No](if_know_avg_glucose), I don't know my average glucose level
+    - [Yeah](if_know_avg_glucose), I know it
+    - [Nope](if_know_avg_glucose), I don't know it
+    - I [know](if_know_avg_glucose) my average glucose level
+    - I [don't know](if_know_avg_glucose) my average glucose level
+    - I [have](if_know_avg_glucose) my average glucose level
+    - I [don't have](if_know_avg_glucose) my average glucose level
+    - [Sure](if_know_avg_glucose), I know it
+    - [Not sure](if_know_avg_glucose), I don't know it
+    - I [know](if_know_avg_glucose) what my average glucose is
+    - I [don't know](if_know_avg_glucose) what my average glucose is
+    - [Yes](if_know_avg_glucose), I'm aware of it
+    - [No](if_know_avg_glucose), I'm not aware of it
+    - [yes](if_know_avg_glucose) sure
+    - [no](if_know_avg_glucose) I don't know
+
+
+
+
 - intent: provide_avg_glucose_level
   examples: |
     - my average glucose level is [95.5](avg_glucose_level)
     - [100.2](avg_glucose_level) is my glucose level
     - My glucose level is [110.5](avg_glucose_level)
-    - I have a glucose level of [90.0](avg_glucose_level)
     - My average glucose is [85.3](avg_glucose_level)
     - [120.0](avg_glucose_level) is my glucose level
     - My blood sugar level is [95.5](avg_glucose_level)
-    - I have a glucose reading of [105.0](avg_glucose_level)
-    - My glucose level averages [88.7](avg_glucose_level)
     - [130.5](avg_glucose_level) is my glucose level
-    - [yes](avg_glucose_level)
-    - [no], I don't know(avg_glucose_level)
-    - [no] idea
-    - I [don't know](avg_glucose_level)
+    - it is [95.5](avg_glucose_level)
+    - it's [100.2](avg_glucose_level)
+    - [110.5](avg_glucose_level)
+    - It is [90.0](avg_glucose_level)
+    - [120.0](avg_glucose_level)
+    - it was [95.5](avg_glucose_level)
 
 - intent: provide_height
   examples: |
@@ -226,3 +271,52 @@ nlu:
     - bye
     - see you
     - bye bye
+
+
+- regex: smoking_status
+  examples: |
+    - \b(never smoked|former smoker|smoke|smoker|don't know|unknown)\b
+
+- regex: if_know_avg_glucose
+  examples: |
+    - \b(yes|no|yeah|nope|yep|know|don't know|have|don't have|sure|not sure)\b
+
+- regex: Residence_type
+  examples: |
+    - \b(urban|rural|city|village|suburban)\b
+
+- regex: ever_married
+  examples: |
+    - \b(married|not married|never been|have been|yes|no|yeah|nope|yep)\b
+
+- regex: heart_disease
+  examples: |
+    - \b(yes|no|yeah|nope|yep|have|don't have|don't)\b
+
+- regex: hypertension
+  examples: |
+    - \b(yes|no|yeah|nope|yep|have|don't have|don't)\b
+
+- regex: gender
+  examples: |
+    - \b(male|female)\b
+
+- regex: work_type
+  examples: |
+    - \b(Private|Self Employed|Government job|Have children|Never worked)\b
+
+- regex: weight
+  examples: |
+    - \b(\d+)\b\s?
+
+- regex: height
+  examples: |
+    - \b(\d+\.\d+|\d+)\b\s?
+
+- regex: avg_glucose_level
+  examples: |
+    - \b(\d+\.\d+|\d+)\b
+
+- regex: age
+  examples: |
+    - \b(\d+)\b\s?
