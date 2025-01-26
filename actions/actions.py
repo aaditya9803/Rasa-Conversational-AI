@@ -2,7 +2,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
-from page.ml_function import ml_function
+from pages.ml_function import get_result
 
 # def verify_data(smoking_status, if_know_avg_glucose, avg_glucose_level, height, weight, residence_type, work_type, ever_married, heart_disease, hypertension, age, gender):
 
@@ -173,6 +173,12 @@ class ActionHandleConversation(Action):
                 
         
                 break        
-
-        print(user_data)
-        return []
+#(age, gender, bmi, hypertension, heart_disease, avg_gulcose, work_type, married, smokes, residence, dont_know_gulcose)
+        # print(user_data)
+        if None in user_data.values():
+            return []
+        else:
+            bmi = user_data["weight"] / (user_data["height"] ** 2)
+            result = get_result(user_data["age"], user_data["gender"], bmi, user_data["hypertension"], user_data["heart_disease"], user_data["avg_glucose_level"], user_data["work_type"], user_data["ever_married"], user_data["smoking_status"], user_data["residence_type"], False)
+            print(result)
+            return []
