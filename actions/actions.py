@@ -45,12 +45,21 @@ class ActionHandleConversation(Action):
               f'Work Type = {user_data["work_type"]}, Residence Type = {user_data["residence_type"]}, '
               f'Avg Glucose Level = {user_data["avg_glucose_level"]}, Height = {user_data["height"]}, '
               f'Weight = {user_data["weight"]}, Smoking Status = {user_data["smoking_status"]}')
+        
+
+
 
         for key in user_data:
             if user_data[key] is None:
                 dispatcher.utter_message(response=f"utter_ask_{key}")
+                print("hi from if")
+
                 break
-            else:
+            
+            if None not in user_data.values():
                 dispatcher.utter_message(response="utter_thank_you")
-                break          
+                print("hi from elif")
+                break        
+
+  
         return []

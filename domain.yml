@@ -104,9 +104,9 @@ responses:
   utter_ask_age:
     - text: "How old are you?"
   utter_ask_gender:
-    - text: "What is your gender? (male/female)"
+    - text: "What is your gender?"
   utter_ask_hypertension:
-    - text: "Do you have hypertension? (yes/no)"
+    - text: "Do you have Hypertension / High Blood Pressure?"
   utter_ask_heart_disease:
     - text: "Do you have any heart disease? (yes/no)"
   utter_ask_ever_married:
