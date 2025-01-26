@@ -2,6 +2,7 @@ version: "3.1"
 
 intents:
   - greet
+  - provide_starting_message
   - provide_age
   - provide_gender
   - provide_hypertension
@@ -10,12 +11,14 @@ intents:
   - provide_work_type
   - provide_residence_type
   - provide_avg_glucose_level
-  - provide_bmi
+  - provide_height
+  - provide_weight
   - provide_smoking_status
   - bot_challenge
   - goodbye
 
 entities:
+  - start_message
   - age
   - gender
   - hypertension
@@ -24,7 +27,8 @@ entities:
   - work_type
   - Residence_type
   - avg_glucose_level
-  - bmi
+  - height
+  - weight
   - smoking_status
 
 slots:
@@ -68,22 +72,39 @@ slots:
     mappings:
       - type: from_entity
         entity: avg_glucose_level
-  bmi:
+  height:
     type: float
     mappings:
       - type: from_entity
-        entity: bmi
+        entity: height
+  
+  weight:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: weight
+
   smoking_status:
     type: text
     mappings:
       - type: from_entity
         entity: smoking_status
+ 
+  # start_message:
+  #   type: text
+  #   mappings:
+  #     - type: from_entity
+  #       entity: start_message
 
 responses:
   utter_greet:
-    - text: "Hi! Let's start with your age. How old are you?"
+    - text: "Hi!"
+  utter_starting_message:
+    - text: "Please provide answers to my questions, Let's get started!"
+  utter_ask_age:
+    - text: "How old are you?"
   utter_ask_gender:
-    - text: "What is your gender? (e.g., male, female, non-binary)"
+    - text: "What is your gender? (male/female)"
   utter_ask_hypertension:
     - text: "Do you have hypertension? (yes/no)"
   utter_ask_heart_disease:
@@ -91,13 +112,15 @@ responses:
   utter_ask_ever_married:
     - text: "Have you ever been married? (yes/no)"
   utter_ask_work_type:
-    - text: "What is your work type? (e.g., private, self-employed, govt_job)"
+    - text: "What is your work type? (private/self-employed/govt_job/children/never_worked)"
   utter_ask_residence_type:
     - text: "What is your residence type? (e.g., urban, rural)"
   utter_ask_avg_glucose_level:
-    - text: "What is your average glucose level?"
-  utter_ask_bmi:
-    - text: "What is your BMI?"
+    - text: "What is your average glucose level? Do you know it?"
+  utter_ask_height:
+    - text: "What is your height?"
+  utter_ask_weight:
+    - text: "What is your weight?"
   utter_ask_smoking_status:
     - text: "What is your smoking status? (e.g., never smoked, formerly smoked, smokes)"
   utter_thank_you:

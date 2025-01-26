@@ -1,10 +1,13 @@
 version: "3.1"
 
 stories:
-- story: collect_all_info
+- story: all_the_informations
   steps:
     - intent: greet
     - action: utter_greet
+    - action: utter_starting_message
+    - intent: provide_starting_message
+    - action: utter_ask_age
     - intent: provide_age
     - action: action_handle_conversation
     - intent: provide_gender
@@ -21,8 +24,10 @@ stories:
     - action: action_handle_conversation
     - intent: provide_avg_glucose_level
     - action: action_handle_conversation
-    - intent: provide_bmi
+    - intent: provide_height
     - action: action_handle_conversation
+    - intent: provide_weight
+    - action: action_handle_conversation  
     - intent: provide_smoking_status
     - action: action_handle_conversation
     - action: utter_thank_you

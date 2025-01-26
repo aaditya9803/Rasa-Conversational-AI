@@ -13,47 +13,44 @@ class ActionHandleConversation(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        user_data = {
+            "age": None,
+            "gender": None,
+            "hypertension": None,
+            "heart_disease": None,
+            "ever_married": None,
+            "work_type": None,
+            "residence_type": None,
+            "avg_glucose_level": None,
+            "height": None,
+            "weight": None,
+            "smoking_status": None
+        }
 
-        age = tracker.get_slot('age')
-        gender = tracker.get_slot('gender')
-        hypertension = tracker.get_slot('hypertension')
-        heart_disease = tracker.get_slot('heart_disease')
-        ever_married = tracker.get_slot('ever_married')
-        work_type = tracker.get_slot('work_type')
-        residence_type = tracker.get_slot('Residence_type')
-        avg_glucose_level = tracker.get_slot('avg_glucose_level')
-        bmi = tracker.get_slot('bmi')
-        smoking_status = tracker.get_slot('smoking_status')
-
-
-        print(f"Debug: Age = {age}, Gender = {gender}, Hypertension = {hypertension}, "
-              f"Heart Disease = {heart_disease}, Ever Married = {ever_married}, "
-              f"Work Type = {work_type}, Residence Type = {residence_type}, "
-              f"Avg Glucose Level = {avg_glucose_level}, BMI = {bmi}, "
-              f"Smoking Status = {smoking_status}")
-
-        if not age:
-            dispatcher.utter_message(response="utter_greet")
-        elif not gender:
-            dispatcher.utter_message(response="utter_ask_gender")
-        elif not hypertension:
-            dispatcher.utter_message(response="utter_ask_hypertension")
-        elif not heart_disease:
-            dispatcher.utter_message(response="utter_ask_heart_disease")
-        elif not ever_married:
-            dispatcher.utter_message(response="utter_ask_ever_married")
-        elif not work_type:
-            dispatcher.utter_message(response="utter_ask_work_type")
-        elif not residence_type:
-            dispatcher.utter_message(response="utter_ask_residence_type")
-        elif not avg_glucose_level:
-            dispatcher.utter_message(response="utter_ask_avg_glucose_level")
-        elif not bmi:
-            dispatcher.utter_message(response="utter_ask_bmi")
-        elif not smoking_status:
-            dispatcher.utter_message(response="utter_ask_smoking_status")
-        else:
-            dispatcher.utter_message(response="utter_thank_you")
+        user_data["age"] = tracker.get_slot('age')
+        user_data["gender"] = tracker.get_slot('gender')
+        user_data["hypertension"] = tracker.get_slot('hypertension')
+        user_data["heart_disease"] = tracker.get_slot('heart_disease')
+        user_data["ever_married"] = tracker.get_slot('ever_married')
+        user_data["work_type"] = tracker.get_slot('work_type')
+        user_data["residence_type"] = tracker.get_slot('Residence_type')
+        user_data["avg_glucose_level"] = tracker.get_slot('avg_glucose_level')
+        user_data["height"] = tracker.get_slot('height')
+        user_data["weight"] = tracker.get_slot('weight')
+        user_data["smoking_status"] = tracker.get_slot('smoking_status')
 
 
+        print(f'Debug: Age = {user_data["age"]}, Gender = {user_data["gender"]}, Hypertension = {user_data["hypertension"]}, '
+              f'Heart Disease = {user_data["heart_disease"]}, Ever Married = {user_data["ever_married"]}, '
+              f'Work Type = {user_data["work_type"]}, Residence Type = {user_data["residence_type"]}, '
+              f'Avg Glucose Level = {user_data["avg_glucose_level"]}, Height = {user_data["height"]}, '
+              f'Weight = {user_data["weight"]}, Smoking Status = {user_data["smoking_status"]}')
+
+        for key in user_data:
+            if user_data[key] is None:
+                dispatcher.utter_message(response=f"utter_ask_{key}")
+                break
+            else:
+                dispatcher.utter_message(response="utter_thank_you")
+                break          
         return []

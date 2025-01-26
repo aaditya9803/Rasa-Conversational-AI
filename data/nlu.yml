@@ -10,63 +10,209 @@ nlu:
     - hola
     - hallo
 
+- intent: provide_starting_message
+  examples: |
+    - I want to know about my health
+    - I want to know about my health status
+    - yes
+    - sure
+    - Let's start
+    - I'm ready
+    - I'm here
+    - I'm ready to start
+    - I'm ready to begin
+    - I'm ready
+    - okay
+    - yeah
+    - Okiee
+    - Okie
+    - Ok
+    - k
+    - yep
+    - yup
+    - okayyy
+    
 
 - intent: provide_age
   examples: |
     - my age is [25](age)
     - I am [30](age) years old
     - age: [20](age)
-
+    - I'm [23](age)
+    - I'm [45](age) years old
+    - I am [18](age) years of age
+    - I just turned [21](age)
+    - I'll be [22](age) next month
+    - I'm about [35](age) years old
+    - I'm in my [40s](age)
+    - I'm [27](age)
+    - I am [19](age)
+    - I'm [33](age) years old
+    - I'm [28](age) years of age
+    - I am [29](age)
+    - [26](age)
+  
 - intent: provide_gender
   examples: |
     - I am a [male](gender)
     - my gender is [female](gender)
-    - gender: [non-binary](gender)
+    - gender: [female](gender)
+    - I'm [male](gender)
+    - I identify as [female](gender)
+    - I'm [male](gender)
+    - My gender is [male](gender)
+    - I am [female](gender)
+    - I'm a [female](gender) person
+    - [male](gender)
+    - I am [male](gender)
+    - I'm [female](gender)
+
 
 - intent: provide_hypertension
   examples: |
     - I have [hypertension](hypertension)
     - [yes](hypertension), I have hypertension
     - [no](hypertension), I don't have hypertension
+    - I suffer from [hypertension](hypertension)
+    - I was diagnosed with [hypertension](hypertension)
+    - I don't have [hypertension](hypertension)
+    - [yes](hypertension), I've been told I have hypertension
+    - [no](hypertension), I've never had hypertension
+    - I have high blood pressure, which is [hypertension](hypertension)
+    - I do not have [hypertension](hypertension)
+    - I have been diagnosed with [hypertension](hypertension)
+    - [yes](hypertension)
+    - [no](hypertension)
 
 - intent: provide_heart_disease
   examples: |
+    - [yes](heart_disease)
+    - [no](heart_disease)
+    - [yes](heart_disease)
+    - [no](heart_disease)
     - I have [heart disease](heart_disease)
     - [yes](heart_disease), I have heart disease
     - [no](heart_disease), I don't have heart disease
+    - I was diagnosed with [heart disease](heart_disease)
+    - I suffer from [heart disease](heart_disease)
+    - I don't have [heart disease](heart_disease)
+    - [yes](heart_disease), I've been told I have heart disease
+    - [no](heart_disease), I've never had heart disease
+    - I have a history of [heart disease](heart_disease)
+    - I do not have [heart disease](heart_disease)
+    - [yeah](heart_disease)
+    - [nope](heart_disease)
+    - [yep](heart_disease)
 
 - intent: provide_ever_married
   examples: |
     - I am [married](ever_married)
     - [yes](ever_married), I have been married
     - [no](ever_married), I have never been married
+    - I'm [married](ever_married)
+    - I've never been [married](ever_married)
+    - I was [married](ever_married) before
+    - I am currently [married](ever_married)
+    - I have been [married](ever_married) in the past
+    - I'm not [married](ever_married)
+    - I've been [married](ever_married) once
+    - [yes](ever_married)
+    - [no](ever_married)
+    - [yeah](ever_married)
+    - [nope](ever_married)
+    - [yep](ever_married)
+
 
 - intent: provide_work_type
   examples: |
     - I work in the [private](work_type) sector
     - my work type is [self-employed](work_type)
     - I have a [govt_job](work_type)
+    - I'm [self-employed](work_type)
+    - I work for the [government](work_type)
+    - I'm in the [private](work_type) sector
+    - I have a [govt_job](work_type)
+    - I'm a [freelancer](work_type)
+    - I work in a [private](work_type) company
+    - I'm [self-employed](work_type) as a consultant
+    - [private](work_type)
 
 - intent: provide_residence_type
   examples: |
     - I live in an [urban](Residence_type) area
     - my residence type is [rural](Residence_type)
+    - I reside in a [rural](Residence_type) area
+    - I live in a [city](Residence_type)
+    - My home is in an [urban](Residence_type) location
+    - I'm from a [rural](Residence_type) town
+    - I live in a [village](Residence_type)
+    - I reside in an [urban](Residence_type) neighborhood
+    - I'm based in a [rural](Residence_type) region
+    - I live in a [suburban](Residence_type) area
+    - [urban](Residence_type)
 
 - intent: provide_avg_glucose_level
   examples: |
     - my average glucose level is [95.5](avg_glucose_level)
     - [100.2](avg_glucose_level) is my glucose level
+    - My glucose level is [110.5](avg_glucose_level)
+    - I have a glucose level of [90.0](avg_glucose_level)
+    - My average glucose is [85.3](avg_glucose_level)
+    - [120.0](avg_glucose_level) is my glucose level
+    - My blood sugar level is [95.5](avg_glucose_level)
+    - I have a glucose reading of [105.0](avg_glucose_level)
+    - My glucose level averages [88.7](avg_glucose_level)
+    - [130.5](avg_glucose_level) is my glucose level
+    - [yes](avg_glucose_level)
+    - [no], I don't know(avg_glucose_level)
+    - [no] idea
+    - I [don't know](avg_glucose_level)
 
-- intent: provide_bmi
+- intent: provide_height
   examples: |
-    - my BMI is [22.5](bmi)
-    - [25.0](bmi) is my BMI
+    - my height is [1.75](height) meters
+    - I am [1.80](height) meters tall
+    - height: [1.65](height)
+    - I'm [1.70](height) meters tall
+    - My height is [1.60](height) meters
+    - I stand at [1.85](height) meters
+    - I'm [1.55](height) meters tall
+    - My height is [1.90](height) meters
+    - I'm [1.72](height) meters tall
+    - I am [1.68](height) meters in height
+    - I'm [1.75](height) meters
+    - I am [1.65](height) meter
+    - I'm [1.80](height) meter
+    - it's [1.70](height) meters
+    - it is [1.60](height) meters
+    - [1.55](height) meters
+    - [1.40](height)
+
+- intent: provide_weight
+  examples: |
+    - my weight is [70](weight) kg
+    - I weigh [65](weight) kg
+    - weight: [80](weight)
+    - I'm [75](weight) kg
+    - My weight is [60](weight) kg
+    - I weigh [85](weight) kg
+    - I'm [72](weight) kg
+    - My weight is [68](weight) kg
+    - I weigh [90](weight) kg
+    - I'm [55](weight) kg
 
 - intent: provide_smoking_status
   examples: |
     - I [never smoked](smoking_status)
     - I am a [former smoker](smoking_status)
     - I [smoke](smoking_status)
+    - I [never smoked](smoking_status) in my life
+    - I used to [smoke](smoking_status), but I quit
+    - I'm a [smoker](smoking_status)
+    - I [never smoked](smoking_status) cigarettes
+    - I [smoke](smoking_status) occasionally
+    - I'm a [former smoker](smoking_status)
+    - I [smoke](smoking_status) regularly
 
 - intent: bot_challenge
   examples: |
