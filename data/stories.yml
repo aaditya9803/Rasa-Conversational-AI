@@ -33,6 +33,8 @@ stories:
     - intent: provide_smoking_status
     - action: action_handle_conversation
     - action: utter_thank_you
+    - intent: goodbye
+    - action: utter_goodbye
 
 # - story: greet
 #   steps:

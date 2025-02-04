@@ -77,13 +77,13 @@ nlu:
     - [nope](hypertension)
     - [yep](hypertension)
     - I [have](hypertension)
-    - I [don't have](hypertension)
+    - I [don't] have(hypertension)
     - [yes](hypertension), I [have](hypertension) hypertension
-    - [no](hypertension), I [don't have](hypertension) hypertension
-    - I [don't have](hypertension)
+    - [no](hypertension), I [don't] have(hypertension) hypertension
+    - I [don't] have(hypertension)
     - [no](hypertension), I've never had hypertension
     - I [have](hypertension) high blood pressure, which is hypertension
-    - I [don't have](hypertension) been diagnosed with hypertension
+    - I [don't] have(hypertension) been diagnosed with hypertension
 
 
 - intent: provide_heart_disease
@@ -95,7 +95,7 @@ nlu:
     - I [have](heart_disease)
     - [yes](heart_disease), I [have](heart_disease) heart disease
     - [no](heart_disease), I [don't](heart_disease) have heart disease
-    - I [don't have](heart_disease) heart disease
+    - I [don't] have(heart_disease) heart disease
     - [yes](heart_disease), I've been told I [have](heart_disease) heart disease
     - [no](heart_disease), I've never had heart disease
     - I [have](heart_disease) a history of heart disease
@@ -162,9 +162,7 @@ nlu:
     - It's [rural](Residence_type)
 
 
-- intent: provide_if_know_avg_glucose
-  examples:  |
-    
+
 - intent: provide_if_know_avg_glucose
   examples: |
     - [yeah](if_know_avg_glucose)
@@ -173,9 +171,9 @@ nlu:
     - [no](if_know_avg_glucose)
     - [yes](if_know_avg_glucose)
     - I [know](if_know_avg_glucose)
-    - I [don't know](if_know_avg_glucose)
+    - I [don't] know(if_know_avg_glucose)
     - I [have](if_know_avg_glucose)
-    - I [don't have](if_know_avg_glucose)
+    - I [don't](if_know_avg_glucose)
     - [sure](if_know_avg_glucose)
     - [not sure](if_know_avg_glucose)
     - [Yes](if_know_avg_glucose), I know my average glucose level
@@ -183,13 +181,13 @@ nlu:
     - [Yeah](if_know_avg_glucose), I know it
     - [Nope](if_know_avg_glucose), I don't know it
     - I [know](if_know_avg_glucose) my average glucose level
-    - I [don't know](if_know_avg_glucose) my average glucose level
+    - I [don't] know(if_know_avg_glucose) my average glucose level
     - I [have](if_know_avg_glucose) my average glucose level
-    - I [don't have](if_know_avg_glucose) my average glucose level
+    - I [don't](if_know_avg_glucose) my average glucose level
     - [Sure](if_know_avg_glucose), I know it
-    - [Not sure](if_know_avg_glucose), I don't know it
+    - [Not](if_know_avg_glucose), I don't know it
     - I [know](if_know_avg_glucose) what my average glucose is
-    - I [don't know](if_know_avg_glucose) what my average glucose is
+    - I [don't] know(if_know_avg_glucose) what my average glucose is
     - [Yes](if_know_avg_glucose), I'm aware of it
     - [No](if_know_avg_glucose), I'm not aware of it
     - [yes](if_know_avg_glucose) sure
@@ -271,6 +269,14 @@ nlu:
     - bye
     - see you
     - bye bye
+    - Thanks for the help
+    - Goodbye
+    - Have a nice day
+    - Bye for now
+    - Bye bye
+    - Bye, see you later
+    - Thank you
+    - Thanks
 
 
 - regex: smoking_status
@@ -291,11 +297,11 @@ nlu:
 
 - regex: heart_disease
   examples: |
-    - \b(yes|no|yeah|nope|yep|have|don't have|don't)\b
+    - \b(yes|no|yeah|nope|yep|have|don't)\b
 
 - regex: hypertension
   examples: |
-    - \b(yes|no|yeah|nope|yep|have|don't have|don't)\b
+    - \b(yes|no|yeah|nope|yep|have|don't)\b
 
 - regex: gender
   examples: |

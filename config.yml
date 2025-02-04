@@ -26,6 +26,11 @@ pipeline:
     epochs: 100
     constrain_similarities: true
   - name: RegexEntityExtractor
+    entities:
+    - hypertension
+    - heart_disease
+    - ever_married
+    - avg_glucose_level
   
   # - name: EntitySynonymMapper
   # - name: ResponseSelector
