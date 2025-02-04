@@ -1,4 +1,4 @@
-# Conversational AI chatbot to Diagnose Stroke
+# Conversational AI chatbot to Predict Stroke
 
 https://github.com/aaditya9803/Rasa-Conversational-AI
 
