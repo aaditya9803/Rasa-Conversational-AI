@@ -45,7 +45,7 @@ class ActionHandleConversation(Action):
         user_data["smoking_status"] = tracker.get_slot('smoking_status')
 
 
-        print(f'Debug: Age = {user_data["age"]}, Gender = {user_data["gender"]}, Hypertension = {user_data["hypertension"]}, '
+        print(f'Age = {user_data["age"]}, Gender = {user_data["gender"]}, Hypertension = {user_data["hypertension"]}, '
               f'Heart Disease = {user_data["heart_disease"]}, Ever Married = {user_data["ever_married"]}, '
               f'Work Type = {user_data["work_type"]}, Residence Type = {user_data["residence_type"]}, '
               f'If know Glucose Level = {user_data["if_know_avg_glucose"]} ,Avg Glucose Level = {user_data["avg_glucose_level"]}, Height = {user_data["height"]}, '
@@ -169,16 +169,24 @@ class ActionHandleConversation(Action):
                     user_data["weight"] = float(user_data["weight"])
                 else:
                     dispatcher.utter_message(response="utter_ask_weight")
-
-                
         
-                break        
-#(age, gender, bmi, hypertension, heart_disease, avg_gulcose, work_type, married, smokes, residence, dont_know_gulcose)
+                break 
+                   
         # print(user_data)
         if None in user_data.values():
             return []
         else:
             bmi = user_data["weight"] / (user_data["height"] ** 2)
             result = get_result(user_data["age"], user_data["gender"], bmi, user_data["hypertension"], user_data["heart_disease"], user_data["avg_glucose_level"], user_data["work_type"], user_data["ever_married"], user_data["smoking_status"], user_data["residence_type"], False)
+            result_prediction = result[0]
+            result_probability = result[1]
+            if result_prediction == 1:
+                result_prediction = "have risk"
+            else:
+                result_prediction = "don't have risk"
+    
             print(result)
-            return []
+            result_probability = f"{result_probability*100:.2f}"
+            dispatcher.utter_message(text=f"Based on the information you provided, you {result_prediction} of having a stroke. The probability of you having a stroke is {result_probability}%")
+
+        return []
